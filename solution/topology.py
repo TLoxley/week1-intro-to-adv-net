@@ -51,11 +51,11 @@ class LabTopology(Topo):
         self.addLink(switch, homePC, port1=2)
         self.addLink(switch, tablet, port1=3)
         self.addLink(switch, phone, port1=4)
-        self.addLink(router, switch, port2=1, params1={"ip": "192.168.0.1/24"})
+        self.addLink(router, switch, port2=1, params1={"ip": "192.168.0.1/24"}, port1=1)
         self.addLink(router, internet, params1={
-                     "ip": "192.168.10.2/24"}, params2={"ip": "192.168.10.1/24"})
-        self.addLink(internet, web, params1={"ip": "10.0.0.1/16"})
-        self.addLink(internet, cloud, params1={"ip": "10.10.0.1/16"})
+                     "ip": "192.168.10.2/24"}, params2={"ip": "192.168.10.1/24"}, port1=2, port2=1)
+        self.addLink(internet, web, params1={"ip": "10.0.0.1/16"}, port1=2, port2=1)
+        self.addLink(internet, cloud, params1={"ip": "10.10.0.1/16"}, port1=3, port2=1)
 
 
 # Expose topology for `mn --custom topology.py --topo simple`
