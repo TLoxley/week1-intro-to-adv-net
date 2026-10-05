@@ -158,7 +158,7 @@ mininet > xterm h1 h2
 
 Each host in the network will have a set of network interfaces and a network configuration, consisting of unique IP and MAC addresses for each interface. A network interface is important for a host to connect to the network. In our example, host `h1` will have a single interface (`h1-eth0`). You can also inspect the interfaces of each host, using the built-in Linux network configuration tools. For example, you can use the iproute2 tool called `ip`. The program allows inspection of the addresses assigned to each interface (`ip addr show`), the IP routes (`ip route show`) and the interfaces (`ip dev show`). By running the commands `h1 ip addr show` and `h2 ip addr show`, you should see that each host has a single interface (eth0) with a unique IP address. You can also run the command `ip addr show`, in the xterm terminal you create in the previous step on each host.
 
-> **TODO**: Using the created topology, answer the questions in the [Week1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
+> **TODO**: Using the created topology, answer the questions in the [Week 1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
 
 ### Mininet Python Scripting
 
@@ -189,7 +189,7 @@ This command tells Mininet to use the custom topology defined in `topology.py` a
 
 ![Figure 9: Home Network topology - switch focus](.resources/homenet-switch.png){width="80%"}
 
-> **Your task**: Modify the provided topology file to recreate the topology in Figure 9. Your topology file should define all the necessary hosts with the correct names and IP addresses, connected to the switch via separate links. Use the port numbers as specified in the topology code to ensure correct interface assignments. Once you complete your code, run the modified topology using the `make topo` command above and answer the questions in the second part of the [Week1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
+> **Your task**: Modify the provided topology file to recreate the topology in Figure 9. Your topology file should define all the necessary hosts with the correct names and IP addresses, connected to the switch via separate links. Use the port numbers as specified in the topology code to ensure correct interface assignments. Once you complete your code, run the modified topology using the `make topo` command above and answer the questions in the second part of the [Week 1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
 
 ## Task 2: Inspecting Traffic with Wireshark and Mininet
 
@@ -305,7 +305,7 @@ You can inspect your routing table on each host in your Mininet topology using t
 mininet> homePC ip route show
 ```
 
-> **Your task**: Once you complete your updated Mininet topology, run the modified topology using the `make topo` command above and answer the questions in the fifth part of the [Week1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
+> **Your task**: Once you complete your updated Mininet topology, run the modified topology using the `make topo` command above and answer the questions in the fifth part of the [Week 1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
 
 ## Task 5: Understanding NAT on the Router
 
@@ -321,4 +321,4 @@ mininet> router iptables -t nat -A POSTROUTING -o router-eth1 -j MASQUERADE
 
 This command adds rules to the NAT table in iptables that specify that outgoing packets on interfaces `router-eth1` and `router-eth2` should have their source IP address modified to the IP address of the respective interface (i.e., perform source NAT). The `MASQUERADE` target automatically determines the appropriate source IP address based on the outgoing interface.
 
-> **Your task**: After enabling NAT on the router, test connectivity from the home network hosts to the Internet networks, and answer the questions in the final part of the [Week1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
+> **Your task**: After enabling NAT on the router, test connectivity from the home network hosts to the Internet networks, and answer the questions in the final part of the [Week 1 Unassessed Quiz](https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2975012).
